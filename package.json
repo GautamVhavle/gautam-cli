@@ -1,0 +1,48 @@
+{
+  "name": "gautam-cli",
+  "version": "0.1.0",
+  "description": "Explore Gautam Vhavle's projects, experience, and live GitHub activity from your terminal.",
+  "type": "module",
+  "bin": {
+    "gautam": "index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node index.js",
+    "check": "node --check index.js",
+    "prepublishOnly": "npm run check"
+  },
+  "keywords": [
+    "cli",
+    "portfolio",
+    "gautam-vhavle",
+    "developer",
+    "interactive",
+    "genai",
+    "iot"
+  ],
+  "author": "Gautam Vhavle <gautamvhavle@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://gautamvhavle.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GautamVhavle/gautam-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GautamVhavle/gautam-cli/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.0.0",
+    "boxen": "^8.0.1",
+    "chalk": "^5.4.1",
+    "gradient-string": "^3.0.0",
+    "open": "^10.1.0"
+  }
+}
