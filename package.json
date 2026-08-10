@@ -14,6 +14,7 @@
   "scripts": {
     "start": "node index.js",
     "check": "node --check index.js",
+    "test": "npm run check",
     "prepublishOnly": "npm run check"
   },
   "keywords": [
@@ -23,9 +24,23 @@
     "developer",
     "interactive",
     "genai",
-    "iot"
+    "iot",
+    "terminal",
+    "developer-portfolio",
+    "open-source",
+    "github-api"
   ],
-  "author": "Gautam Vhavle <gautamvhavle@gmail.com>",
+  "author": {
+    "name": "Gautam Vhavle",
+    "email": "gautamvhavle@gmail.com",
+    "url": "https://gautamvhavle.vercel.app"
+  },
+  "contributors": [
+    {
+      "name": "Gautam Vhavle",
+      "url": "https://github.com/GautamVhavle"
+    }
+  ],
   "license": "MIT",
   "homepage": "https://gautamvhavle.vercel.app",
   "repository": {
@@ -36,7 +51,11 @@
     "url": "https://github.com/GautamVhavle/gautam-cli/issues"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=18",
+    "npm": ">=9"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "@inquirer/prompts": "^7.0.0",
