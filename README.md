@@ -22,6 +22,8 @@ One command. No global installation.
 npx gautam-cli@latest
 ```
 
+[View on npm](https://www.npmjs.com/package/gautam-cli) · [Source on GitHub](https://github.com/GautamVhavle/gautam-cli) · [Web portfolio](https://gautamvhavle.vercel.app)
+
 </div>
 
 ---
