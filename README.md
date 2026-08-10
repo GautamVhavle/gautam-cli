@@ -45,22 +45,23 @@ Gautam is a software engineer, patent holder, and builder working across full-st
 
 Navigate with your arrow keys to explore:
 
-- Selected products and open-source projects
-- Engineering experience and career timeline
-- Languages, frameworks, AI tools, infrastructure, and hardware
-- Career highlights and contact links
-- Live GitHub profile statistics and top repositories
-- One-key access to the web portfolio and résumé
+- Eight projects with full stacks and working website, source, and article actions
+- Five engineering roles with complete responsibilities and company links
+- 46 technologies grouped across eight engineering disciplines
+- Sixteen credentials with issuer, date, skills, and verification links
+- Personal story, interests, career highlights, and every contact channel
+- Live GitHub statistics, top repositories, and latest DEV articles
+- One-key access to the web portfolio, résumé, credentials, and social profiles
 
-| View              | What you will find                                                 |
-| ----------------- | ------------------------------------------------------------------ |
-| **About**         | A concise introduction, current focus, and location                |
-| **Selected work** | Five shipped products with descriptions, stacks, and links         |
-| **Experience**    | A career timeline from embedded systems to production GenAI        |
-| **Toolbox**       | Languages, product stack, AI tooling, infrastructure, and hardware |
-| **Highlights**    | Patents, open source, writing, and multidisciplinary engineering   |
-| **GitHub — live** | Current public stats and top repositories from the GitHub API      |
-| **Contact**       | Email, social links, and a direct calendar link                    |
+| View               | What you will find                                                               |
+| ------------------ | -------------------------------------------------------------------------------- |
+| **About**          | Profile, origin story, interests, and career highlights                          |
+| **Projects**       | Eight products with individual detail pages and contextual actions               |
+| **Experience**     | Five roles from embedded systems to production GenAI, with full responsibilities |
+| **Toolbox**        | 46 technologies across product, AI, infrastructure, IoT, quality, and design     |
+| **Certifications** | Sixteen verified credentials with direct verification links                      |
+| **Live**           | Current GitHub activity and recent DEV Community writing                         |
+| **Connect**        | Email, calendar, GitHub, LinkedIn, X, Instagram, YouTube, DEV, and Spotify       |
 
 ## Run it
 
@@ -81,19 +82,37 @@ gautam
 
 ```text
 ? What would you like to explore?
-❯ About                  The short version
-  Selected work          Products I have shipped
-  Experience             My engineering journey
-  Toolbox                Technologies I build with
-  Highlights             A few things I am proud of
-  GitHub — live          Profile and top repositories
+❯ About                  Profile, story, interests, and highlights
+  Projects               8 products with links and source
+  Experience             5 roles with full details
+  Toolbox                46 technologies by discipline
+  Certifications         16 verified credentials
+  Live                    GitHub activity and latest writing
+  Connect                 Email, calendar, and every social link
   ─────────────────────────────────────────────────
-  Open portfolio ↗       gautamvhavle.vercel.app
-  Open résumé ↗          View in your browser
-  Contact                Say hello or book a call
+  Open web portfolio ↗    gautamvhavle.vercel.app
+  Open résumé ↗           View the latest résumé
 ```
 
-The interface adapts to terminal width, uses Unicode-safe visuals, and degrades gracefully when GitHub's API or the network is unavailable.
+Every content section supports drill-down navigation and a clear route back. Link actions open only after an explicit selection, the interface adapts to terminal width, and live data degrades gracefully when the network is unavailable.
+
+## Command-line options
+
+The default command starts the interactive experience, while these flags make the package useful in scripts and automation:
+
+```bash
+npx gautam-cli@latest --help
+npx gautam-cli@latest --version
+npx gautam-cli@latest --json
+npx gautam-cli@latest --no-clear
+```
+
+| Flag              | Purpose                                               |
+| ----------------- | ----------------------------------------------------- |
+| `-h`, `--help`    | Show usage without starting an interactive prompt     |
+| `-v`, `--version` | Print the installed package version                   |
+| `--json`          | Export the portfolio summary as machine-readable JSON |
+| `--no-clear`      | Preserve previous views in terminal scrollback        |
 
 ## Design principles
 
@@ -101,6 +120,7 @@ The interface adapts to terminal width, uses Unicode-safe visuals, and degrades 
 - **Useful, not gimmicky** — every screen contains real portfolio information.
 - **Resilient** — network-backed features include a clean offline fallback.
 - **Portable** — works anywhere Node.js 18+ runs.
+- **Interruptible** — exits cleanly from any nested prompt with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 - **Small surface area** — five focused runtime dependencies and no telemetry.
 
 ## Local development
@@ -131,10 +151,12 @@ Live GitHub data comes from GitHub's public API. If the API or network is unavai
 ```text
 npx gautam-cli
       │
-      ├── interactive keyboard menu
-      ├── static portfolio content
-      ├── public GitHub API ──► live stats + top repos
-      └── system browser ─────► portfolio / résumé
+      ├── nested keyboard navigation
+      ├── complete local portfolio data
+      ├── GitHub API ─────────► live stats + top repos
+      ├── DEV API ────────────► latest writing
+      ├── JSON mode ──────────► machine-readable output
+      └── system browser ─────► selected links only
 ```
 
 No analytics, API keys, cookies, or user data collection.

@@ -34,5 +34,8 @@ jobs:
       - name: Validate CLI
         run: npm test
 
+      - name: Verify JSON export
+        run: node index.js --json | node -e "let data=''; process.stdin.on('data', chunk => data += chunk); process.stdin.on('end', () => JSON.parse(data));"
+
       - name: Inspect package contents
         run: npm pack --dry-run
